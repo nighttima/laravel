@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\DataRequest;
 use App\Models\Information;
 use function GuzzleHttp\Promise\all;
 
 class FormController extends Controller
 {
-    public function submit(Request $req)
+    public function submit(DataRequest $req)
     {
         $information = new Information();
         $information->firstname = $req->input('firstname');
@@ -23,7 +24,6 @@ class FormController extends Controller
     }
     public  function upDate($id) {
     return view('update-data', ['data' => Information::all()->find($id)]);
-//        dd(Information::all()->find($id));
     }
     public  function upDateSubmit($id, Request $req)
     {
