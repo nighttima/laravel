@@ -24,8 +24,16 @@
                     <td>{{ $value->firstname }}</td>
                     <td>{{ $value->lastname }}</td>
                     <td>{{ $value->date }}</td>
-                    <td><a href="{{ route('form-update', $value->id) }}"><button type="button"  class="btn btn-primary">Change</button></a></td>
-                    <td><a href="{{ route('form-delete-submit', $value->id) }}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                    <td>
+                        <a href="{{ route('form-update', $value->id) }}">
+                            <button type="button"  class="btn btn-primary">Change</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ route('form-delete-submit', $value->id) }}">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

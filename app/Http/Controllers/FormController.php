@@ -18,13 +18,16 @@ class FormController extends Controller
         $information->save();
         return redirect()->route('form-data')->with('success', 'Даные записаны успешно');
     }
+
     public  function allData() {
         $information = new Information();
         return view('list', ['data' => $information -> all()]);
     }
+
     public  function upDate($id) {
-    return view('update-data', ['data' => Information::all()->find($id)]);
+        return view('update-data', ['data' => Information::all()->find($id)]);
     }
+
     public  function upDateSubmit($id, DataRequest $req)
     {
         $information = Information::all()->find($id);
@@ -34,6 +37,7 @@ class FormController extends Controller
         $information->save();
         return redirect()->route('form-data')->with('success', 'Данные успешно изменены');
     }
+
     public function deleteData($id){
         Information::all()->find($id)->delete();
         return redirect()->route('form-data')->with('success', 'Данные успешно удалены');
