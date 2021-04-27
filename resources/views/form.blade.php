@@ -3,7 +3,7 @@
     form
 @endsection
 @section('content')
-    <form action="{{route('form')}}" method="post">
+    <form action="{{route('form-contact')}}" method="post">
         @csrf
         <div>
             <label for="firstname">Firstname</label><br>
