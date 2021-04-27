@@ -25,7 +25,7 @@ class FormController extends Controller
     public  function upDate($id) {
     return view('update-data', ['data' => Information::all()->find($id)]);
     }
-    public  function upDateSubmit($id, Request $req)
+    public  function upDateSubmit($id, DataRequest $req)
     {
         $information = Information::all()->find($id);
         $information->firstname = $req->input('firstname');
