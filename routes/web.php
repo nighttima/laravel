@@ -10,12 +10,10 @@ Route::get('/form', function () {
     return view('form');
 })->name('form');
 
-Route::post('/form/submit', 'App\Http\Controllers\FormController@submit')->name('form-contact');
-Route::get('/list/all', 'App\Http\Controllers\FormController@allData')->name('form-data');
-Route::get('/list/all/{id}/update', 'App\Http\Controllers\FormController@upDate')->name('form-update');
-Route::post('/list/all/{id}/update', 'App\Http\Controllers\FormController@upDateSubmit')
+Route::get('/admin', 'App\Http\Controllers\FormController@index')->name('form-data');
+Route::get('/admin/{id}', 'App\Http\Controllers\FormController@show')->name('form-show');
+Route::put('/admin/{id}', 'App\Http\Controllers\FormController@update')
     ->name('form-update-submit');
-Route::get('/list/all/{id}/delete', 'App\Http\Controllers\FormController@deleteData')
+Route::post('/form', 'App\Http\Controllers\FormController@store')->name('form-contact');
+Route::delete('/admin/{id}', 'App\Http\Controllers\FormController@delete')
     ->name('form-delete-submit');
-//Route::get('/list/all/{id}/update', [FormController::class, 'upDate'])->name('form-update');
-

@@ -24,15 +24,15 @@ class DataRequest extends FormRequest
     public function rules()
     {
         return [
-            'firstname' => 'required|min:3',
-            'lastname' => 'required|min:3',
+            'title' => 'required|min:1',
+            'text' => 'required|min:1',
             'date' => 'required|date'
         ];
     }
     public function messages(){
         return [
-            'firstname.required' => 'Поле имя не может быть пустое',
-            'lastname.required' => 'Поле фамилия не может быть пустое',
+            'title.required' => 'Поле имя не может быть пустое',
+            'text.required' => 'Поле фамилия не может быть пустое',
             'date.required' => 'Поле год рождения не может быть пустое'
         ];
     }

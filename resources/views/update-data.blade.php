@@ -14,16 +14,17 @@
     @endif
     <form action="{{route('form-update-submit', $data->id)}}" method="post">
         @csrf
+        @method('PUT')
         <div>
-            <label for="firstname">Firstname</label><br>
-            <input type="text" value="{{ $data->firstname }}" name="firstname" id="firstname">
+            <label for="title">Title</label><br>
+            <input type="text" value="{{ $data->title }}" name="title" id="title">
         </div>
         <div>
-            <label for="lastname">Lastname</label><br>
-            <input type="text" value="{{ $data->lastname }}" name="lastname" id="lastname">
+            <label for="text">Text</label><br>
+            <input type="text" value="{{ $data->text }}" name="text" id="text">
         </div>
         <div>
-            <label for="date">Date of birth</label><br>
+            <label for="date">Date</label><br>
             <input type="date" value="{{ $data->date }}" name="date" id="date">
         </div>
         <br>

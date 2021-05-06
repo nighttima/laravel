@@ -11,8 +11,8 @@
     <table class="table bg-light w-50 ">
         <thead>
             <tr>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
+                <th scope="col">Title</th>
+                <th scope="col">Text</th>
                 <th scope="col">Date</th>
                 <th scope="col">Change</th>
                 <th scope="col">Delete</th>
@@ -21,18 +21,20 @@
         <tbody>
             @foreach($data as $value)
                 <tr>
-                    <td>{{ $value->firstname }}</td>
-                    <td>{{ $value->lastname }}</td>
+                    <td>{{ $value->title }}</td>
+                    <td>{{ $value->text }}</td>
                     <td>{{ $value->date }}</td>
                     <td>
-                        <a href="{{ route('form-update', $value->id) }}">
+                        <a href="{{ route('form-show', $value->id) }}">
                             <button type="button"  class="btn btn-primary">Change</button>
                         </a>
                     </td>
                     <td>
-                        <a href="{{ route('form-delete-submit', $value->id) }}">
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </a>
+                        <form action="{{route('form-delete-submit', $value->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

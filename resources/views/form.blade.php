@@ -15,12 +15,12 @@
     <form action="{{route('form-contact')}}" method="post">
         @csrf
         <div>
-            <label for="firstname">Firstname</label><br>
-            <input type="text" name="firstname" id="firstname">
+            <label for="title">Title</label><br>
+            <input type="text" name="title" id="title">
         </div>
         <div>
-            <label for="lastname">Lastname</label><br>
-            <input type="text" name="lastname" id="lastname">
+            <label for="text">Text</label><br>
+            <input type="text" name="text" id="text">
         </div>
         <div>
             <label for="date">Date of birth</label><br>

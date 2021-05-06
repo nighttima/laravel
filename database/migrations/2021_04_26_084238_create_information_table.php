@@ -20,6 +20,7 @@ class CreateInformationTable extends Migration
             $table->date('date');
             $table->timestamps();
         });
+//        Schema::rename('information', 'posts');
     }
 
     /**
