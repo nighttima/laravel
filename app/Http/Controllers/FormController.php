@@ -36,15 +36,7 @@ class FormController extends Controller
 //        ]);
 
         try {
-//            Dose not work
-//            Information::create($request->all);
-
-            $information = new Information();
-
-            $information->title = $request->title;
-            $information->text = $request->text;
-            $information->date = $request->date;
-            $information->save();
+            Information::create($request->all());
 
             return redirect()->route('form-data')->with('success', 'Даные записаны успешно');
         }catch (\Exception $e){
