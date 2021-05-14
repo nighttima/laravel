@@ -3,13 +3,19 @@
     List
 @endsection
 @section('content')
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success')}}
+    <div class="row align-content-center flex-column">
+            @if(session('success'))
+            <div class="">
+                <div class="alert alert-success">
+                    {{ session('success')}}
+                </div>
+            </div>
+            @endif
+        <div class="w-75 p-3">
+            <a href="{{ route('form') }}"><button type="button" class="btn btn-success">Create</button></a>
         </div>
-    @endif
-    <table class="table bg-light w-50 ">
-        <thead>
+        <table class="table bg-light w-75">
+            <thead>
             <tr>
                 <th scope="col">Title</th>
                 <th scope="col">Text</th>
@@ -17,8 +23,8 @@
                 <th scope="col">Change</th>
                 <th scope="col">Delete</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             @foreach($data as $value)
                 <tr>
                     <td>{{ $value->title }}</td>
@@ -38,6 +44,7 @@
                     </td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 @endsection

@@ -29,7 +29,8 @@ class FormController extends Controller
     }
     public function store(DataRequest $request) {
 
-//        $this->validate($request, [
+//        $this
+//->validate($request, [
 //            'title' => 'required|min:1',
 //            'text' => 'required|min:1',
 //            'date' => 'required|date'
