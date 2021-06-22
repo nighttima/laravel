@@ -10,7 +10,7 @@ use function GuzzleHttp\Promise\all;
 class FormController extends Controller
 {
     public  function index() {
-        return view('list', ['data' => Information::all()]);
+            return view('list', ['data' => Information::paginate(9)]);
     }
 
     public  function show($id) {
