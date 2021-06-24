@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Author extends Model
+class Roles extends Model
 {
     use HasFactory;
-    public $table = "authors";
+    public $table = "roles";
     protected $fillable = [
-        'alias',
+        'name',
     ];
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TestController;
 //use Laravel\Nova\Nova;
 
 Route::get('/', function () {
@@ -11,6 +11,10 @@ Route::get('/', function () {
 
 Route::get('/register', [ApiController::class, 'register']);
 Route::get('/login', [ApiController::class, 'login']);
+
+Route::get('/test', [TestController::class, 'test']);
+
+
 
 //Route::get('/form', function () {
 //    return view('form');

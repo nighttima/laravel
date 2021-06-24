@@ -16,4 +16,12 @@ Information extends Model
         'date',
     ];
 
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+    public function author() {
+    }
+    public  function tags() {
+        return $this->belongsToMany(Tags::class, 'post_tag', 'post_id', 'tag_id');
+    }
 }
