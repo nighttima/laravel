@@ -13,7 +13,9 @@ Route::get('/register', [ApiController::class, 'register']);
 Route::get('/login', [ApiController::class, 'login']);
 
 Route::get('/test', [TestController::class, 'test']);
-
+Route::get('/admin-register', function () {
+    return view('registerAdmin');
+});
 
 
 //Route::get('/form', function () {

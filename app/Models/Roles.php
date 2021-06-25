@@ -12,4 +12,12 @@ class Roles extends Model
     protected $fillable = [
         'name',
     ];
+    public function admins() {
+        return $this->belongsToMany(
+            Admin::class,
+            'admin_role',
+            'role_id',
+            'admin_id'
+        );
+    }
 }
