@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use App\Http\Controllers\AuthController;
 // Public routes
 Route::post('/register-check', [AuthController::class, 'register'])->name('register-check');
 Route::post('/login-check', [AuthController::class, 'login'])->name('login-check');
+Route::post('/register-admin', [AdminAuthController::class, 'register'])->name('register-admin');
 
 //Nova::routes();
 // Protected routes
